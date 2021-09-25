@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# Intellij - ignorar a pasta .idea
+.idea
+
 # Log file
 *.log
 
