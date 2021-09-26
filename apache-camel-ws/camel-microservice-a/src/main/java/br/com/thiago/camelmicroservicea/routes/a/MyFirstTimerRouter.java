@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-
-@Component
+//Comentei o component para ele não inserir no contexto do spring e criar os logs, pois vamos criar uma outra classe de rota para arquivos
+//@Component
 public class MyFirstTimerRouter extends RouteBuilder {
 
     @Autowired
