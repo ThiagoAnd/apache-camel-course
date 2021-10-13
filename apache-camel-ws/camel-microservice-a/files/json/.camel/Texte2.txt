@@ -1,0 +1,1 @@
+Testando o FILE com o Apache Camel

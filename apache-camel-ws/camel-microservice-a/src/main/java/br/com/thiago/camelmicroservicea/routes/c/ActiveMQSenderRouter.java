@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  *Esse .to criou uma fila la no activemq, eu não precisei criar, só startei pelo docker e adicionei um starter do activemq para o camel
  */
-@Component
+//@Component
 public class ActiveMQSenderRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
