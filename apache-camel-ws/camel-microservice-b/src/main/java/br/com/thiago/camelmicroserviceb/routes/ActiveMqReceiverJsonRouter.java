@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 
-@Component
-public class ActiveMqReceiverRouter extends RouteBuilder {
+//@Component
+public class ActiveMqReceiverJsonRouter extends RouteBuilder {
 
 
-    @Autowired
+//    @Autowired
     private MyCurrencyExchangeProcessor myCurrencyExchangeProcessor;
 
-    @Autowired
+//    @Autowired
     private MyCurrencyExchangeProcessorTransformer myCurrencyExchangeProcessorTransformer;
 
     @Override
@@ -31,7 +31,7 @@ public class ActiveMqReceiverRouter extends RouteBuilder {
     }
 }
 
-@Component
+//@Component
 class MyCurrencyExchangeProcessor {
 
     Logger logger = LoggerFactory.getLogger(MyCurrencyExchangeProcessor.class);
@@ -41,7 +41,7 @@ class MyCurrencyExchangeProcessor {
     }
 }
 
-@Component
+//@Component
 class MyCurrencyExchangeProcessorTransformer {
 
     Logger logger = LoggerFactory.getLogger(MyCurrencyExchangeProcessorTransformer.class);

@@ -3,7 +3,7 @@ package br.com.thiago.camelmicroservicea.routes.d;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class ActiveMQEnvioXmlParaFila extends RouteBuilder {
     @Override
     public void configure() throws Exception {
