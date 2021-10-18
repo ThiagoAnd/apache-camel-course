@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 
-//@Component
+@Component
 public class ActiveMqReceiverJsonRouter extends RouteBuilder {
 
 
@@ -24,9 +24,9 @@ public class ActiveMqReceiverJsonRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("activemq:my-active-mq-queue") //Aqui começamos a escutar a fila my-active-mq-queue e quando cair alguma mensagem nos prosseguimos a rota
-                .unmarshal().json(JsonLibrary.Jackson, CurrencyExchange.class)// Aqui eu pego o body e faço um mapper para um objeto currencyExchange. e quando eu faço o log, ele manda o TOSTRING desse objeto que eu criei
-                .bean(myCurrencyExchangeProcessor)// Usando um bean só para fazer um log
-                .bean(myCurrencyExchangeProcessorTransformer) // Usando esse outro bean para multiplicar por 10x e mostrar no log
+//                .unmarshal().json(JsonLibrary.Jackson, CurrencyExchange.class)// Aqui eu pego o body e faço um mapper para um objeto currencyExchange. e quando eu faço o log, ele manda o TOSTRING desse objeto que eu criei
+//                .bean(myCurrencyExchangeProcessor)// Usando um bean só para fazer um log
+//                .bean(myCurrencyExchangeProcessorTransformer) // Usando esse outro bean para multiplicar por 10x e mostrar no log
                 .to("log:MICROSERVIÇO B - received-message-from-active-mq"); // a rota vem para essa linha, que diz que mostrará um log com a string received-message-from-active-mq
     }
 }

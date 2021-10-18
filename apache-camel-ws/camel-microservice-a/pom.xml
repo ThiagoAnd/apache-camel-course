@@ -49,9 +49,31 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Dependencia utilizada somente para utilizar o Kafka -->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-kafka-starter</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <!-- Dependencia utilizada para trabalhar com requisições a uma rest api que criamos no microservice B -->
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-http-starter</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <!-- Dependencia para utilizar CSV com camel -->
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-csv-starter</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <!-- Dependencia para utilizar o keystore do java, ver no arquivo notes.md-->
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-crypto-starter</artifactId>
             <version>${camel.version}</version>
         </dependency>
     </dependencies>

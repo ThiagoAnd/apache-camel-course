@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * No curso não apareceu como faço para entrar na area dos topicos do Kafka, não sei se o docker compose up veio com essa configuração
  * Em um outro momento, criar uma imagem do Kafka e tentar melhor
  */
-@Component
+//@Component
 public class KafkaEnvioArquivoParaFila extends RouteBuilder {
     @Override
     public void configure() throws Exception {
