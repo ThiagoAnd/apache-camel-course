@@ -11,7 +11,7 @@
     <groupId>br.com.thiago</groupId>
     <artifactId>camel-microservice-b</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>camel-microservice-b</name>
+    <name>microservice-b</name>
     <description>camel-microservice-b</description>
     <properties>
         <java.version>11</java.version>
@@ -65,7 +65,6 @@
             <version>${camel.version}</version>
         </dependency>
 
-        <!-- Dependencia para utilizar o keystore do java, ver no arquivo notes.md-->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-crypto-starter</artifactId>
@@ -78,6 +77,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>thiagoandradeit/camelcourse-${project.name}:${project.version}</name>
+                    </image>
+                </configuration>
             </plugin>
         </plugins>
     </build>

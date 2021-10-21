@@ -10,8 +10,8 @@
     </parent>
     <groupId>br.com.thiago</groupId>
     <artifactId>camel-microservice-a</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>camel-microservice-a</name>
+    <version>1.0</version>
+    <name>microservice-a</name>
     <description>camel-microservice-a</description>
     <properties>
         <java.version>11</java.version>
@@ -31,12 +31,26 @@
             <artifactId>camel-spring-boot-starter</artifactId>
             <version>${camel.version}</version>
         </dependency>
+        <!-- Dependencia para utilizar o cliente activemq pelo apache camel -> activemq:-->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-activemq-starter</artifactId>
             <version>${camel.version}</version>
         </dependency>
 
+        <!-- Dependencia para integrar o rabbitmq com este projeto, mas acho que não vai precisar pois vamos usar o cliente rabbitmq do apache camel logo abaixo desse-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.rabbitmq</groupId>-->
+        <!--            <artifactId>amqp-client</artifactId>-->
+        <!--            <version>5.13.1</version>-->
+        <!--        </dependency>-->
+
+        <!-- Dependencia para utilizar o cliente rabbitmq pelo apache camel -> rabbitmq:-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-rabbitmq</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -83,6 +97,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>thiagoandradeit/camelcourse-${project.name}:${project.version}</name>
+                    </image>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
             </plugin>
         </plugins>
     </build>

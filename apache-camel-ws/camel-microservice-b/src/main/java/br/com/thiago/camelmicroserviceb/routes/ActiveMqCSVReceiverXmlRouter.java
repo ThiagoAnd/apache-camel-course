@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class ActiveMqCSVReceiverXmlRouter extends RouteBuilder {
+public class  ActiveMqCSVReceiverXmlRouter extends RouteBuilder {
 
     @Override
     public void configure() {

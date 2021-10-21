@@ -3,17 +3,17 @@ package br.com.thiago.camelmicroservicea.routes.pattern;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class EipPatternsRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
 
         //O tracing TRUE é outra forma de mostrar mais informações que ajudam no processo de verificar algum erro , junto com o log
-        getContext().setTracing(true);
+       // getContext().setTracing(true);
 
         //Para criar uma dead letter queue, faça como na linha abaixo
-        errorHandler(deadLetterChannel("activemq:dead-letter-queue"));
+        //errorHandler(deadLetterChannel("activemq:dead-letter-queue"));
 
         //Esse abaixo era pra ser um exemplo de pattern multicast, mas como eu disse ali em baixo eu ainda não vi a necessidade de usar .multicast pq sem ele faz a mesma coisa, então preciso verificar
 //        from("timer:multicast?period=10000")
@@ -37,7 +37,8 @@ public class EipPatternsRouter extends RouteBuilder {
                 .routingSlip(simple(routingSlip));
 
         from("direct:endpoint1")
-                .to("{{endpoint-vindo-do-properties}}");//As 2 chaves servem para dizer que essa é uma variavel vindo do application.properties
+               // .to("{{endpoint-vindo-do-properties}}");//As 2 chaves servem para dizer que essa é uma variavel vindo do application.properties. Verificar o funcionamento
+                       .to("log:foi para endpoint1");
         from("direct:endpoint2")
                 .to("log:foi para endpoint2");
         from("direct:endpoint3")
