@@ -31,26 +31,35 @@
             <artifactId>camel-spring-boot-starter</artifactId>
             <version>${camel.version}</version>
         </dependency>
-        <!-- Dependencia para utilizar o cliente activemq pelo apache camel -> activemq:-->
-        <dependency>
-            <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-activemq-starter</artifactId>
-            <version>${camel.version}</version>
-        </dependency>
 
-        <!-- Dependencia para integrar o rabbitmq com este projeto, mas acho que não vai precisar pois vamos usar o cliente rabbitmq do apache camel logo abaixo desse-->
+        <!-- Dependencia para utilizar o cliente activemq pelo apache camel -> activemq:-->
         <!--        <dependency>-->
-        <!--            <groupId>com.rabbitmq</groupId>-->
-        <!--            <artifactId>amqp-client</artifactId>-->
-        <!--            <version>5.13.1</version>-->
+        <!--            <groupId>org.apache.camel.springboot</groupId>-->
+        <!--            <artifactId>camel-activemq-starter</artifactId>-->
+        <!--            <version>${camel.version}</version>-->
         <!--        </dependency>-->
 
         <!-- Dependencia para utilizar o cliente rabbitmq pelo apache camel -> rabbitmq:-->
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-rabbitmq</artifactId>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-rabbitmq-starter</artifactId>
             <version>${camel.version}</version>
         </dependency>
+
+        <!-- Dependencia para usar o componente Metrics e o counter no Camel-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-metrics</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-core-starter</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -64,11 +73,11 @@
         </dependency>
 
         <!-- Dependencia utilizada somente para utilizar o Kafka -->
-        <dependency>
-            <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-kafka-starter</artifactId>
-            <version>${camel.version}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.camel.springboot</groupId>-->
+        <!--            <artifactId>camel-kafka-starter</artifactId>-->
+        <!--            <version>${camel.version}</version>-->
+        <!--        </dependency>-->
 
         <!-- Dependencia utilizada para trabalhar com requisições a uma rest api que criamos no microservice B -->
         <dependency>
@@ -78,11 +87,11 @@
         </dependency>
 
         <!-- Dependencia para utilizar CSV com camel -->
-        <dependency>
-            <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-csv-starter</artifactId>
-            <version>${camel.version}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.camel.springboot</groupId>-->
+        <!--            <artifactId>camel-csv-starter</artifactId>-->
+        <!--            <version>${camel.version}</version>-->
+        <!--        </dependency>-->
 
         <!-- Dependencia para utilizar o keystore do java, ver no arquivo notes.md-->
         <dependency>

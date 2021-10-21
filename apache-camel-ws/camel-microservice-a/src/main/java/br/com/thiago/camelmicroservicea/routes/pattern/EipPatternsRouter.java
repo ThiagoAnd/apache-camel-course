@@ -3,7 +3,7 @@ package br.com.thiago.camelmicroservicea.routes.pattern;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class EipPatternsRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
