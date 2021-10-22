@@ -32,5 +32,3 @@ services:
 networks:
   network-camel-microservices:
     name: network-camel-rabbitmq-microservices
-
-#Network não precisava pois é utilizado o network default caso nenhum network estivesse setado
