@@ -19,7 +19,7 @@ public class RabbitMqRouter extends RouteBuilder {
                 .setBody().constant("Body da mensagem da rota com timer")
                 //.log(exchangeProperty(Exchange.TIMER_COUNTER).toString())//Quando o timer é utilizado, é criado uma propriedade TIMER_COUNTER na exchange, aqui eu peguei o nome dela, e logo abaixo com o ${exchangeProperty.CamelTimerCounter} eu utilizei para loggar
                 .log("Enviado para a fila no rabbitmq: ${exchangeProperty.CamelTimerCounter} X")
-                .to("rabbitmq:ddd");
+                .to("rabbitmq:exchange-timer?queue=fila-timer");//componente:nomeexchange?fila=nomefila
     }
 }
 

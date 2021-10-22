@@ -8,10 +8,29 @@ services:
       - "5672:5672"
       - "15672:15672"
       - "15692:15692"
+    networks:
+      - network-camel-microservices
   microservicea:
-    image: thiagoandradeit/camelcourse-microservice-a:1.0
+    image: thiagoandradeit/camelcourse-microservice-a:1.1
     container_name: camel-ms--microservice-a
     ports:
       - "8080:8080"
+    networks:
+      - network-camel-microservices
     depends_on:
       - rabbitmq
+  microserviceb:
+    image: thiagoandradeit/camelcourse-microservice-b:1.1
+    container_name: camel-ms--microservice-b
+    ports:
+      - "8000:8000"
+    networks:
+      - network-camel-microservices
+    depends_on:
+      - microservicea
+
+networks:
+  network-camel-microservices:
+    name: network-camel-rabbitmq-microservices
+
+#Network não precisava pois é utilizado o network default caso nenhum network estivesse setado
